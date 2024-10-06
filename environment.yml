@@ -18,4 +18,4 @@ dependencies:
         - langchain
         - langchain_openai
         - langchain_experimental
-        - "langserve[all]"
+        - langserve[all]>=0.0.30
