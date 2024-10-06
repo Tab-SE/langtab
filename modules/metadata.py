@@ -29,15 +29,17 @@ def read():
         print(response.text)
 
 def get_values(column_name):
-     # read in prompt
-     if column_name == 'PatientStatus1':
+    # read in prompt
+    if column_name == 'PatientStatus1':
         return ""
-     column_values = {'columns': [{'columnName': column_name}]}
-     output = query(column_values)
-     if output is None:
+    column_values = {'columns': [{'columnName': column_name}]}
+    print("*** column_values ***", column_values)
+
+    output = query(column_values)
+    if output is None:
         return None
-     sample_values = [list(item.values())[0] for item in output][:4]
-     return sample_values
+    sample_values = [list(item.values())[0] for item in output][:4]
+    return sample_values
 
 def instantiate_prompt():
     datasource_metadata = read()
