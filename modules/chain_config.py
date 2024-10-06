@@ -6,7 +6,8 @@ from langchain_core.messages import SystemMessage
 from langchain_core.output_parsers import StrOutputParser
 from langchain.globals import set_verbose
 
-from modules import metadata, api
+from modules import metadata
+from modules.server import api
 from agents import pandas
 
 # defines the langtab chain

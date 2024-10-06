@@ -1,8 +1,9 @@
-import argparse, uvicorn, asyncio
+import argparse, uvicorn
 
 from dotenv import load_dotenv
 
-from modules import chain_config, serve
+from modules import chain_config
+from modules.server import serve
 
 # runs interactively in the terminal
 def run_interactive_mode(chain):
