@@ -2,10 +2,11 @@ import argparse, uvicorn, asyncio
 
 from dotenv import load_dotenv
 
-from modules import chain_config, serve
+from modules import chain_config, serve, cli_output
 
 # runs interactively in the terminal
 def run_interactive_mode(chain):
+    cli_output.print_welcome_message()
     active_utterance = get_utterance()
     while active_utterance != 'stop':
         chain.invoke(active_utterance)
