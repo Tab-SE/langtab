@@ -1,4 +1,4 @@
-import os, re, json, logging, pandas as pd
+import os, re, json, logging,langchain, pandas as pd
 
 from langchain_openai import ChatOpenAI
 from langchain.agents.agent_types import AgentType
@@ -8,6 +8,9 @@ from modules import headless
 
 # Set up the logger
 logger = logging.getLogger(__name__)
+
+# Set high verbose for logs
+langchain.debug = True
 
 def analyze(query):
     try:
