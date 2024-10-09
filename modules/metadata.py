@@ -1,8 +1,6 @@
-import os, requests, json
+import os, requests, json, logging
 from modules.headless import query
 from prompts.nlq_to_vds import prompt
-
-import logging
 
 # Set up the logger for this module
 logger = logging.getLogger(__name__)
