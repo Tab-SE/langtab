@@ -1,4 +1,7 @@
-import os, requests, json
+import os, requests, json, logging
+
+# Set up the logger
+logger = logging.getLogger(__name__)
 
 # define the headless BI query template
 def query(query):
@@ -25,5 +28,5 @@ def query(query):
         print("here is the JSON output I've generated and will send to VDS: " + json.dumps(data))
         return data
     else:
-        print("Failed to fetch data from the API. Status code:", response.status_code)
-        print(response.text)
+        logger.info("Failed to fetch data from the API. Status code:", response.status_code)
+        logger.info(response.text)
